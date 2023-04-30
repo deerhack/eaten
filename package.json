@@ -1,0 +1,29 @@
+{
+  "name": "deerhack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Deerwalk-Developers-Community/Deerhack.git",
+  "author": "Rojen Maharjan <44132059+rojen11@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "packageManager": "yarn@1.22.17",
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "dev": "turbo run dev",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint",
+    "test": "turbo run test"
+  },
+  "dependencies": {
+    "express-fileupload": "^1.4.0",
+    "prisma": "^4.11.0",
+    "turbo": "^1.8.5"
+  },
+  "devDependencies": {
+    "@types/express-fileupload": "^1.4.1"
+  }
+}
