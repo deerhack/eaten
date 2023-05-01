@@ -23,6 +23,8 @@ model Participant {
   email          String
   team_name      String
   qr_data        Bytes
+  Event          Event? @relation(fields: [eventId], references: [id])
+  eventId        Int?
 }
 
 enum Gender {
@@ -30,3 +32,15 @@ enum Gender {
   Female
 }
 
+model Event {
+  id           Int           @id @default(autoincrement())
+  name         String
+  start_time   DateTime      @default(now())
+  end_time     DateTime
+  participants Participant[]
+}
+
+enum FoodPrefrence {
+  Veg
+  NonVeg
+}
