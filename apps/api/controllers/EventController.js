@@ -62,6 +62,35 @@ class EventController{
         }
 
     }
+    static async subscribe(req,res){
+        try{
+
+            const event = await prisma.event.findUnique({ where: { id: req.params.eventId } })
+
+            if (!event) {
+                throw new Error('Event not found')
+            }
+
+            const participant = await prisma.participant.findUnique({
+                where: { uuid: res.locals.validated.ID },
+                include: { Event: true },
+            })
+
+            if (participant.Event && participant.Event.id === req.params.eventId) {
+                throw new Error('User is already subscribed to this event');
+            }
+            const user = await prisma.participant.update({
+                 where: { uuid: res.locals.validated.ID} ,
+                 data:{Event:{ connect:{ id:req.params.eventId }},
+                 include:{ Event:true },
+                }})
+            return res.status(200).json({success:true,data:user});
+
+        }catch(error){
+            return res.status(500).json({success:false,error:error})
+
+        }
+    }
 }
 
 module.exports = EventController
