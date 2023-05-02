@@ -1,4 +1,6 @@
 const { PrismaClient } = require("@prisma/client")
+const jwt = require("jsonwebtoken")
+
 
 const prisma = new PrismaClient()
 
@@ -14,7 +16,7 @@ module.exports = async (req,res,next) => {
     const token = authHeader.split(' ')[1]
 
   // Verify the token using the secret key
-    jwt.verify(token, secret, async (err, decoded) => {
+    jwt.verify(token, process.env.JWT_SECRET, async (err, decoded) => {
     if (err) {
         return res.status(403).send({ message: 'Invalid or expired token' })
     }
