@@ -23,12 +23,8 @@ model Participant {
   email          String
   team_name      String
   qr_data        Bytes
-  // Event          Event? @relation(fields: [eventId], references: [id])
-  // eventId        Int
-  events         Event[] @relation("ParticipationEvent")
 
-  // events         Event[] @relation((fields: []))
-  // events         Event[] @relation("EventParticipants", references: [id])
+  events         Event[] @relation("ParticipationEvent")
 }
 
 enum Gender {

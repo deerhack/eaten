@@ -1,26 +1,25 @@
-const { Router } = require("express")
-const { PrismaClient } = require("@prisma/client")
-const prisma = new PrismaClient()
-const isAdmin = require("../middleware/isAdmin")
-const EventController = require("../controllers/EventController")
-const ValidateEventRequest = require("../middleware/ValidateEventRequest")
-const validateSubscriptionRequest = require("../middleware/ValidateSubscriptionRequest")
+const { Router } = require("express");
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
+const isAdmin = require("../middleware/isAdmin");
+const EventController = require("../controllers/EventController");
+const ValidateEventRequest = require("../middleware/ValidateEventRequest");
+const validateSubscriptionRequest = require("../middleware/ValidateSubscriptionRequest");
 
+const router = Router();
 
-const router = Router()
+router.post("/", isAdmin, ValidateEventRequest, EventController.add); // add an event to the database
+router.get("/", isAdmin, EventController.index); //get all current events
+router.delete("/:id", isAdmin, EventController.destroy); // delete a event
+router.put("/:id", isAdmin, ValidateEventRequest, EventController.update); // update a event data
+router.post(
+  "/:id",
+  isAdmin,
+  validateSubscriptionRequest,
+  EventController.subscribe
+); // make a participant subscribe to an event
+router.get("/:id", isAdmin, EventController.getIndividualEvent); // get individual data about an event
+router.get("/participant/:id", isAdmin, EventController.getParticipantData);
+router.get("/participant/qr/:id", isAdmin, EventController.getParticipantQR);
 
-
-router.post("/",ValidateEventRequest,EventController.add) // works 100%
-router.get("/",EventController.index) // works 100%
-router.delete("/:id",isAdmin,EventController.destroy)
-router.put("/:id",isAdmin,ValidateEventRequest,EventController.update)
-
-router.post("/:id",validateSubscriptionRequest,EventController.subscribe)
-
-router.get('/:id',EventController.getIndividual)
-
-router.get('/participant/:id',EventController.get_participant_data)
-
-
-module.exports = router
-
+module.exports = router;
