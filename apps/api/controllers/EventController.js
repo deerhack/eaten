@@ -4,14 +4,32 @@ const prisma = new PrismaClient()
 class EventController{
     static async index(req,res){
         try{
-            const data = await prisma.event.findMany({})
+            const data = await prisma.event.findMany({select:{
+                id:true,
+                name:true,
+                start_time:true,
+                end_time:true,
+            }})
             return res.status(200).json({success:true,data:data});
         }catch(error){
             console.log(error)
             return res.status(500).json({success:false,error:error})
         }
-
     }
+
+    
+    static async getIndividual(req,res){
+        try {
+            const data = await prisma.event.findUnique({where:{
+                id:parseInt(req.params.id)
+            },include:{participants:true}})
+            return res.status(200).json({success:true,data:data})
+        } catch (error) {
+            console.log(error)
+            return res.status(500).json({success:false,error:error})
+        }
+    }
+
     static async add (req,res){
         const data = res.locals.validated;
         try{
@@ -32,7 +50,7 @@ class EventController{
     static async update(req, res) {
         const data = res.locals.validated;
         
-        const eventId = req.params.id; // assuming the id of the event to update is in the request parameter 'id'
+        const eventId = parseInt(req.params.id); // assuming the id of the event to update is in the request parameter 'id'
         try {
           const updated = await prisma.event.update({
             where: { id: eventId },
@@ -51,45 +69,72 @@ class EventController{
       
     static async destroy(req,res){
         try {
-            const deleted = prisma.event.delete({
+            const deleted = await prisma.event.delete({
                 where:{
-                    id:req.params.eventToDelete
+                    id:parseInt(req.params.id)
                 }
             })
             return res.status(200).json({success:true,deleted:deleted})
         } catch (error) {
+            console.log(error)
             return res.status(500).json({success:false,error:error})
         }
 
     }
-    static async subscribe(req,res){
-        try{
-
-            const event = await prisma.event.findUnique({ where: { id: req.params.eventId } })
-
-            if (!event) {
-                throw new Error('Event not found')
-            }
-
-            const participant = await prisma.participant.findUnique({
-                where: { uuid: res.locals.validated.ID },
-                include: { Event: true },
-            })
-
-            if (participant.Event && participant.Event.id === req.params.eventId) {
-                throw new Error('User is already subscribed to this event');
-            }
-            const user = await prisma.participant.update({
-                 where: { uuid: res.locals.validated.ID} ,
-                 data:{Event:{ connect:{ id:req.params.eventId }},
-                 include:{ Event:true },
-                }})
-            return res.status(200).json({success:true,data:user});
-
-        }catch(error){
-            return res.status(500).json({success:false,error:error})
-
+    static async subscribe(req, res) {
+        try {
+          const eventId = parseInt(req.params.id)
+          const userId = res.locals.validated.ID
+      
+          const event = await prisma.event.findUnique({ where: { id: eventId } })
+      
+          if (!event) {
+            return res.status(404).json({success:false,error:"No such Event Found!"})
+          }
+      
+          const participant = await prisma.participant.findUnique({
+            where: { uuid: userId },
+            include: { events: true },
+          })
+      
+          const eventIds = participant.events.map((event) => event.id)
+      
+          if (eventIds.includes(eventId)) {
+            return res.status(403).json({success:false,data:"Already registered for this event!"})
+          }
+      
+          const updatedParticipant = await prisma.participant.update({
+            where: { uuid: userId },
+            data: { events: { connect: { id: eventId } } },
+            include: { events: true },
+          })
+      
+          return res.status(200).json({ success: true, data: updatedParticipant.uuid })
+      
+        } catch (error) {
+          console.log(error)
+          return res.status(500).json({ success: false, error: error })
         }
+      }
+
+    static async get_participant_data(req,res){
+        const participant_id = req.params.id;
+        const data = await prisma.participant.findUnique({
+            where:
+            {
+                uuid:participant_id
+            },
+            select:{
+                uuid:true,
+                first_name:true,
+                last_name:true,
+                email:true,
+                gender:true,
+                team_name:true,
+                events:true
+            }
+        })
+        return res.status(200).json(data)
     }
 }
 
