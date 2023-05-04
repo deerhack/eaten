@@ -3,14 +3,21 @@ import { Link } from "react-router-dom";
 import HomeLayout from "@/Layouts/HomeLayout";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useAuthHeader } from "react-auth-kit";
 
 const QR = () => {
   const [events, setEvents] = useState();
   const [selectedEvent, setSeletedEvent] = useState();
+  const [data, setData] = useState();
+  const authHeaders = useAuthHeader();
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get("/api/event");
+      const result = await axios.get("/api/event", {
+        headers: {
+          authorization: authHeaders(),
+        },
+      });
       setEvents(result.data.data);
     };
     fetchData();
@@ -18,9 +25,16 @@ const QR = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // const result = await axios.
+      const result = await axios.get(`/api/event/${selectedEvent}`, {
+        headers: {
+          authorization: authHeaders(),
+        },
+      });
+      setData(result.data.data.participants);
     };
-    fetchData();
+    if (selectedEvent != null) {
+      fetchData();
+    }
   }, [selectedEvent]);
 
   return (
@@ -44,7 +58,7 @@ const QR = () => {
               id="events"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
-              <option value={"select an event"} selected disabled>
+              <option value={"null"} selected>
                 Select an Event
               </option>
               {events && events.length != 0 ? (
@@ -57,7 +71,7 @@ const QR = () => {
             </select>
           </div>
           {selectedEvent ? (
-            <Link to={"/scan"}>
+            <Link to={`/scan?event=${selectedEvent}`}>
               <button
                 type="button"
                 className="md:self-end text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
@@ -82,53 +96,24 @@ const QR = () => {
                 </th>
               </tr>
             </thead>
-            {selectedEvent ? (
+            {selectedEvent !== null || selectedEvent !== "select an event" ? (
               <tbody>
-                <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    Apple MacBook Pro 17"
-                  </th>
-                  <td className="px-6 py-4">Silver</td>
-                </tr>
-                <tr className="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    Microsoft Surface Pro
-                  </th>
-                  <td className="px-6 py-4">White</td>
-                </tr>
-                <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    Magic Mouse 2
-                  </th>
-                  <td className="px-6 py-4">Black</td>
-                </tr>
-                <tr className="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    Google Pixel Phone
-                  </th>
-                  <td className="px-6 py-4">Gray</td>
-                </tr>
-                <tr>
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    Apple Watch 5
-                  </th>
-                  <td className="px-6 py-4">Red</td>
-                </tr>
+                {data &&
+                  data.map((parti) => (
+                    <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                      <th
+                        scope="row"
+                        className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                      >
+                        {parti.first_name + " " + parti.last_name}
+                      </th>
+                      <td className="px-6 py-4">
+                        <span className="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
+                          Eaten
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             ) : (
               <p className="text-center text-xl font-bold">No Event Selected</p>
