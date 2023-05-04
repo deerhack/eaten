@@ -1,39 +1,35 @@
-const { PrismaClient } = require("@prisma/client")
-const jwt = require("jsonwebtoken")
+const { PrismaClient } = require("@prisma/client");
+const jwt = require("jsonwebtoken");
 
+const prisma = new PrismaClient();
 
-const prisma = new PrismaClient()
+module.exports = async (req, res, next) => {
+  const authHeader = req.headers.authorization;
 
-module.exports = async (req,res,next) => {
-
-    const authHeader = req.headers.authorization
-
-    if (!authHeader) {
-        return res.status(401).send({ message: 'Authorization header missing' })
-    }
+  if (!authHeader) {
+    return res.status(401).send({ message: "Authorization header missing" });
+  }
 
   // Parse the token from the Authorization header
-    const token = authHeader.split(' ')[1]
+  const token = authHeader.split(" ")[1];
 
   // Verify the token using the secret key
-    jwt.verify(token, process.env.JWT_SECRET, async (err, decoded) => {
+  jwt.verify(token, process.env.JWT_SECRET, async (err, decoded) => {
     if (err) {
-        return res.status(403).send({ message: 'Invalid or expired token' })
+      return res.status(403).send({ message: "Invalid or expired token" });
     }
     const data = await prisma.admin.findFirst({
-        where:{
-            username:decoded.username
-        }
-    })
-    if(!data){
-        res.status(403).send({ message: 'Invalid or expired token' })
+      where: {
+        username: decoded.username,
+      },
+    });
+    if (!data) {
+      res.status(403).send({ message: "Invalid or expired token" });
     }
-    req.user = data
+    req.user = data;
 
     // Store the decoded payload in the request object for later use
-    
-    next()
-  })
 
-
-}
+    next();
+  });
+};

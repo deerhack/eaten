@@ -8,14 +8,18 @@ const validateSubscriptionRequest = require("../middleware/ValidateSubscriptionR
 
 const router = Router();
 
-router.post("/", isAdmin, ValidateEventRequest, EventController.add);
-router.get("/", EventController.index);
-router.delete("/:eventToDelete", isAdmin, EventController.destroy);
-router.put("/:id", isAdmin, ValidateEventRequest, EventController.update);
+router.post("/", isAdmin, ValidateEventRequest, EventController.add); // add an event to the database
+router.get("/", isAdmin, EventController.index); //get all current events
+router.delete("/:id", isAdmin, EventController.destroy); // delete a event
+router.put("/:id", isAdmin, ValidateEventRequest, EventController.update); // update a event data
 router.post(
-  "/:eventId",
+  "/:id",
+  isAdmin,
   validateSubscriptionRequest,
   EventController.subscribe
-);
+); // make a participant subscribe to an event
+router.get("/:id", isAdmin, EventController.getIndividualEvent); // get individual data about an event
+router.get("/participant/:id", isAdmin, EventController.getParticipantData);
+router.get("/participant/qr/:id", isAdmin, EventController.getParticipantQR);
 
 module.exports = router;

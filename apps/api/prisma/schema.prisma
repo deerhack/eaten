@@ -15,16 +15,16 @@ model Admin {
 }
 
 model Participant {
-  participant_id Int    @id @default(autoincrement())
-  uuid           String @unique
+  participant_id Int     @id @default(autoincrement())
+  uuid           String  @unique
   first_name     String
   last_name      String
   gender         Gender
   email          String
   team_name      String
   qr_data        Bytes
-  Event          Event? @relation(fields: [eventId], references: [id])
-  eventId        Int?
+
+  events         Event[] @relation("ParticipationEvent")
 }
 
 enum Gender {
@@ -37,7 +37,8 @@ model Event {
   name         String
   start_time   DateTime      @default(now())
   end_time     DateTime
-  participants Participant[]
+  // participants Participant[]
+  participants Participant[] @relation("ParticipationEvent")
 }
 
 enum FoodPrefrence {
