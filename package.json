@@ -21,7 +21,8 @@
   "dependencies": {
     "express-fileupload": "^1.4.0",
     "prisma": "^4.11.0",
-    "turbo": "^1.8.5"
+    "turbo": "^1.8.5",
+    "web": "^0.0.2"
   },
   "devDependencies": {
     "@types/express-fileupload": "^1.4.1"
