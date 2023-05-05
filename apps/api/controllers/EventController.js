@@ -19,6 +19,43 @@ class EventController {
     }
   }
 
+  static async getIndividualCountEvent(req,res){
+    const eventId = parseInt(req.params.eventId);
+    try{
+      const data = await prisma.event.findUnique({
+        where:{id:eventId},
+        select:{
+          participants:true
+        }
+      });
+      data.participants.count = data.length;
+      console.log(data.participants);
+      return res.status(200).json({success:true,"data":{"participants":data.participants,"count":data.participants.length}});
+    }catch(error){
+      return res.status(500).json({success:false,error:error});
+    }
+
+  }
+
+  static async getAllCountEvent(req,res){
+    try{
+    const data = await prisma.event.findMany({
+      select:{
+        name:true,
+        participants:true
+      }
+    });
+    for(const event of data){
+      event.participants = event.participants.length
+    }
+    return res.status(200).json({success:true,data:data});
+    }catch (error){
+      console.log(error);
+      return res.status(500).json({success:false,error:error})
+    }
+
+  }
+
   static async getIndividualEvent(req, res) {
     try {
       const data = await prisma.event.findUnique({

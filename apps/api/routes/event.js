@@ -18,6 +18,8 @@ router.post(
   validateSubscriptionRequest,
   EventController.subscribe
 ); // make a participant subscribe to an event
+router.get("/count",isAdmin,EventController.getAllCountEvent);
+router.get("/:eventId/count",EventController.getIndividualCountEvent);
 router.get("/:id", isAdmin, EventController.getIndividualEvent); // get individual data about an event
 router.get("/participant/:id", isAdmin, EventController.getParticipantData);
 router.get("/participant/qr/:id", isAdmin, EventController.getParticipantQR);
