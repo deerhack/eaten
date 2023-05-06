@@ -174,7 +174,7 @@ class EventController {
 
       return res
         .status(200)
-        .json({ success: true, data: updatedParticipant.uuid });
+        .json({ success: true, data: {uuid:updatedParticipant.uuid,fist_name:updatedParticipant.first_name,last_name:updatedParticipant.last_name,email:updatedParticipant.email,events:updatedParticipant.events} });
     } catch (error) {
       console.log(error);
       return res.status(500).json({ success: false, error: error });
