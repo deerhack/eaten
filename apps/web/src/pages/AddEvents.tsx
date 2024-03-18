@@ -30,7 +30,7 @@ const AddEvents = () => {
       if (result) {
         Swal.fire("", "Event Added!", "success");
       }
-    } catch (err: any) {
+    } catch (err: any) { ///cat
       console.log(err);
       // console.log(err.response.data.message);
     }

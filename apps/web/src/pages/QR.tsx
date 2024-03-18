@@ -1,15 +1,28 @@
 import { Link } from "react-router-dom";
 
 import HomeLayout from "@/Layouts/HomeLayout";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useAuthHeader } from "react-auth-kit";
+interface Event{
+  id : string;
+  name: string; 
+  length:number;
+}
+
+interface Participant{
+  first_name:string;
+  last_name:string; 
+
+}
 
 const QR = () => {
-  const [events, setEvents] = useState();
-  const [selectedEvent, setSeletedEvent] = useState();
-  const [data, setData] = useState();
+  const [events, setEvents] = useState<Event[]>([]);
+  const [selectedEvent, setSeletedEvent] = useState<String>();
+  const [data, setData] = useState<Participant[]>([]);
   const authHeaders = useAuthHeader();
+
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,6 +49,7 @@ const QR = () => {
       fetchData();
     }
   }, [selectedEvent]);
+  
 
   return (
     <HomeLayout>
@@ -52,7 +66,7 @@ const QR = () => {
               Select an event
             </label>
             <select
-              onChange={(e) => {
+              onChange={(e:React.ChangeEvent<HTMLSelectElement>) => {
                 setSeletedEvent(e.target.value);
               }}
               id="events"
@@ -99,13 +113,13 @@ const QR = () => {
             {selectedEvent !== null || selectedEvent !== "select an event" ? (
               <tbody>
                 {data &&
-                  data.map((parti) => (
+                  data.map((participant) => (
                     <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                       <th
                         scope="row"
                         className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                       >
-                        {parti.first_name + " " + parti.last_name}
+                        {participant.first_name + " " + participant.last_name}
                       </th>
                       <td className="px-6 py-4">
                         <span className="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">

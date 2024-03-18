@@ -11,7 +11,7 @@ const Scan = () => {
   const [eventId, setEventId] = useState("");
   const [id, setId] = useState("");
   const authHeaders = useAuthHeader();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, _] = useSearchParams();
 
   const videoRef = createRef<HTMLVideoElement>();
 
@@ -31,6 +31,7 @@ const Scan = () => {
           }
         );
         Swal.fire("", "Added Sucessfully", "success");
+        console.log(result);
       } catch (err) {
         console.log(err);
         Swal.fire("", "Error", "error");
@@ -40,7 +41,7 @@ const Scan = () => {
   }, [id]);
 
   useEffect(() => {
-    setEventId(searchParams.get("event") as String);
+    setEventId(searchParams.get("event") as string);
     if (videoRef.current) {
       const qrScanner = new QrScanner(
         videoRef.current,

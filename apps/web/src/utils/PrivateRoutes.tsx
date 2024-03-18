@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useIsAuthenticated } from "react-auth-kit";
 import { Navigate, Outlet, useNavigate } from "react-router-dom";
 
