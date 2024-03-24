@@ -1,5 +1,4 @@
 var express = require("express");
-var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var dotenv = require("dotenv");
@@ -21,6 +20,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/event", eventRouter);
 app.use("/admin", adminRouter);
 
-app.listen(8000, () => console.log("listening on port 8000"));
+app.listen(5000, () => console.log("listening on port 5000"));
 
 module.exports = app;

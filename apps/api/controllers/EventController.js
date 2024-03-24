@@ -19,41 +19,45 @@ class EventController {
     }
   }
 
-  static async getIndividualCountEvent(req,res){
+  static async getIndividualCountEvent(req, res) {
     const eventId = parseInt(req.params.eventId);
-    try{
+    try {
       const data = await prisma.event.findUnique({
-        where:{id:eventId},
-        select:{
-          participants:true
-        }
+        where: { id: eventId },
+        select: {
+          participants: true,
+        },
       });
       data.participants.count = data.length;
       console.log(data.participants);
-      return res.status(200).json({success:true,"data":{"participants":data.participants,"count":data.participants.length}});
-    }catch(error){
-      return res.status(500).json({success:false,error:error});
+      return res.status(200).json({
+        success: true,
+        data: {
+          participants: data.participants,
+          count: data.participants.length,
+        },
+      });
+    } catch (error) {
+      return res.status(500).json({ success: false, error: error });
     }
-
   }
 
-  static async getAllCountEvent(req,res){
-    try{
-    const data = await prisma.event.findMany({
-      select:{
-        name:true,
-        participants:true
+  static async getAllCountEvent(req, res) {
+    try {
+      const data = await prisma.event.findMany({
+        select: {
+          name: true,
+          participants: true,
+        },
+      });
+      for (const event of data) {
+        event.participants = event.participants.length;
       }
-    });
-    for(const event of data){
-      event.participants = event.participants.length
-    }
-    return res.status(200).json({success:true,data:data});
-    }catch (error){
+      return res.status(200).json({ success: true, data: data });
+    } catch (error) {
       console.log(error);
-      return res.status(500).json({success:false,error:error})
+      return res.status(500).json({ success: false, error: error });
     }
-
   }
 
   static async getIndividualEvent(req, res) {
@@ -158,12 +162,10 @@ class EventController {
       const eventIds = participant.events.map((event) => event.id);
 
       if (eventIds.includes(eventId)) {
-        return res
-          .status(403)
-          .json({
-            success: false,
-            error: "Already registered for this event!",
-          });
+        return res.status(403).json({
+          success: false,
+          error: "Already registered for this event!",
+        });
       }
 
       const updatedParticipant = await prisma.participant.update({
@@ -172,9 +174,16 @@ class EventController {
         include: { events: true },
       });
 
-      return res
-        .status(200)
-        .json({ success: true, data: {uuid:updatedParticipant.uuid,fist_name:updatedParticipant.first_name,last_name:updatedParticipant.last_name,email:updatedParticipant.email,events:updatedParticipant.events} });
+      return res.status(200).json({
+        success: true,
+        data: {
+          uuid: updatedParticipant.uuid,
+          fist_name: updatedParticipant.first_name,
+          last_name: updatedParticipant.last_name,
+          email: updatedParticipant.email,
+          events: updatedParticipant.events,
+        },
+      });
     } catch (error) {
       console.log(error);
       return res.status(500).json({ success: false, error: error });

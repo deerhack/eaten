@@ -1,0 +1,11 @@
+uuid,first_name,last_name,gender,email,team_name
+1abc,John,Doe,Male,johndoe@example.com,Team A
+2def,Jane,Smith,Female,janesmith@example.com,Team B
+3ghi,Michael,Johnson,Male,michaeljohnson@example.com,Team C
+4jkl,Emily,Williams,Female,emilywilliams@example.com,Team A
+5mno,Christopher,Brown,Male,christopherbrown@example.com,Team B
+6pqr,Amanda,Jones,Female,amandajones@example.com,Team C
+7stu,David,Davis,Male,daviddavis@example.com,Team A
+8vwx,Sarah,Taylor,Female,sarahtaylor@example.com,Team B
+9yza,James,Anderson,Male,jamesanderson@example.com,Team C
+0bcd,Emma,Thomas,Female,emmathomas@example.com,Team A
