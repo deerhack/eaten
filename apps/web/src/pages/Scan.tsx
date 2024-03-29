@@ -28,7 +28,7 @@ const Scan = () => {
             headers: {
               authorization: authHeaders(),
             },
-          }
+          },
         );
         Swal.fire("", "Added Sucessfully", "success");
         console.log(result);
@@ -58,7 +58,7 @@ const Scan = () => {
           /* your options or returnDetailedScanResult: true if you're not specifying any other options */
           returnDetailedScanResult: true,
           highlightScanRegion: true,
-        }
+        },
       );
       qrScanner.$overlay;
       // if (result !== null) qrScanner.destroy();

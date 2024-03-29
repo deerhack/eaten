@@ -25,12 +25,13 @@ const AddEvents = () => {
           headers: {
             authorization: authHeaders(),
           },
-        }
+        },
       );
       if (result) {
         Swal.fire("", "Event Added!", "success");
       }
-    } catch (err: any) { ///cat
+    } catch (err: any) {
+      ///cat
       console.log(err);
       // console.log(err.response.data.message);
     }
