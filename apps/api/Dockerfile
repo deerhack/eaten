@@ -19,6 +19,8 @@ COPY . .
 # RUN ./bin/seedData ./data/main.csv
 
 # Start backend server
+
 RUN chmod +x entrypoint.sh
 EXPOSE 5000
-CMD ./entrypoint.sh
+RUN npx prisma generate
+CMD ["npm","run","dev"]
