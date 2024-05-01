@@ -17,8 +17,12 @@ if (!username || !password) {
 }
 
 async function createUser(username, password) {
-  const created = await prisma.admin.create({
-    data: {
+  const created = await prisma.admin.upsert({
+    where: {
+      username: username,
+    },
+    update: {},
+    create: {
       username: username,
       password: password,
     },
