@@ -8,4 +8,4 @@ chmod +x ./bin/*
 
 ./bin/addAdmin deerhack@deerwalk.edu.np deerHackRocks
 ./bin/seedData ./data/main.csv
-# npm run dev
+npm run dev

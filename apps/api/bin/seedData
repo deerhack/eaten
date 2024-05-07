@@ -10,21 +10,25 @@ function seedData() {
   for (const user of data) {
     // console.log(user);
     prisma.participant
-      .create({
-        data:{
+      .upsert({
+        where: {
+          uuid: user.uuid,
+        },
+        update: {},
+        create: {
           uuid: user.uuid,
           first_name: user.first_name,
           last_name: user.last_name,
           gender: "user.gender",
           team_name: user.team_name,
           email: user.email,
-        }
+        },
       })
       .then((done) => {
         console.log(`Done ${done.first_name} ${done.last_name}`);
       })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
         console.error(`Error ${error.first_name} ${error.last_name}`);
       });
   }

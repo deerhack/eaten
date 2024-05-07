@@ -14,10 +14,14 @@ services:
     build:
       context: ./apps/api/
       dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: mysql://deerhack:deerhackpassword@database/food_system
+      SECRET_KEY: 453fd2a04cdbd70541f429134b7f94df84fd18c9ee88034618306e1ee277a38c  
     ports:
       - "5000:5000"
     depends_on:
-      - database
+      database:
+        condition: service_healthy
     networks:
       - app-network
 
@@ -35,6 +39,18 @@ services:
       - db-data:/var/lib/mysql
     networks:
       - app-network
+    healthcheck:
+      interval: 30s
+      retries: 3
+      test:
+        [
+          "CMD",
+          "healthcheck.sh",
+          "--su-mysql",
+          "--connect",
+          "--innodb_initialized"
+        ]
+      timeout: 30s
 
   reverse_proxy:
     image: haproxy
