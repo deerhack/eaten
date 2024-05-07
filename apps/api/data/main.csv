@@ -1,11 +1,191 @@
-uuid,first_name,last_name,gender,email,team_name
-1abc,John,Doe,Male,johndoe@example.com,Team A
-2def,Jane,Smith,Female,janesmith@example.com,Team B
-3ghi,Michael,Johnson,Male,michaeljohnson@example.com,Team C
-4jkl,Emily,Williams,Female,emilywilliams@example.com,Team A
-5mno,Christopher,Brown,Male,christopherbrown@example.com,Team B
-6pqr,Amanda,Jones,Female,amandajones@example.com,Team C
-7stu,David,Davis,Male,daviddavis@example.com,Team A
-8vwx,Sarah,Taylor,Female,sarahtaylor@example.com,Team B
-9yza,James,Anderson,Male,jamesanderson@example.com,Team C
-0bcd,Emma,Thomas,Female,emmathomas@example.com,Team A
+uuid,first_name,last_name,email,team
+2a789139-6af6-4220-bd8b-730c6bff4f40,Sanjay,Pahari,paharisanjay10@gmail.com,Silicactus
+c2009b67-4c0a-4fc8-969e-78602ab61d35,Samrid,Pandit,hello@samrid.me,Calculus
+82757b15-741a-4f18-b391-469233051c81,Dhiraj,Chapagain,dhirajchapagain353@gmail.com,Calculus
+e96765de-1096-4c1f-b840-1013cc3f5abf,Nischal,Subedi,nischal1337@gmail.com,Calculus
+fe0ed89b-7545-4251-972c-534853552fb0,Priyanshu,Sharma,psneb420@gmail.com,N/A
+9168cf91-ac0e-48fb-90c9-a468988f5464,Sabin,Maharjan,sabinmhx@gmail.com,leyuskc
+7a773022-3fd1-49d2-bc1b-1623e04362d6,Ankur,Gajurel,ankurgajurel02@gmail.com,Calculus
+0d99fccb-26d0-434b-b588-afcb9ab4d485,Manish,Shivabhakti,manish.shivabhakti.99@gmail.com,N/A
+abe88ad4-fd1a-4a8d-a2c2-4220fe5261d0,Prabin,Subedi,prabinsubedi2016@gmail.com,N/A
+bdf2e254-95a8-422a-a14c-3f1d1d5e14b5,Basanta,Rai,sangpangbasanta@gmail.com,Prime IT Club
+6435e134-8766-4f6f-9114-5f6b79ab61f0,Prabha,Timilsina,prabhatimilsina13@gmail.com,ByteBlazers
+16a18e83-6077-4d82-8f9f-6374eef14573,Eva,Ghimire,evaghimire3211@gmail.com,ByteBlazers
+3438b8aa-e3f1-47fe-82c4-2bdf4e55bbbf,Supriya,Bhujel,cherubbhujel@gmail.com,Prime IT Club
+716dd7f1-cde9-464d-a7fc-38179b71fc9f,Aashra,Pradhan,aashrapradhan68@gmail.com,Adrishya
+34e6b311-e12c-4cfa-9ba4-02a7a9ed7e63,Yasmini,Gyawali,gyawaliyasmini246@gmail.com,ByteBlazers
+bb7cdf60-d43a-4212-9c99-fef792988fd4,Apeksha,Gyawali,gyawaliapeksha123@gmail.com,ByteBlazers
+fea12f2f-827d-442f-ab62-ca1d26046542,Jugal,Shrestha,jugalnepali@gmail.com,Adrishya
+8163fb97-2764-47bc-a222-2e6e01b8bdb5,Diwas,Parajuli,parajuli.diwas101@gmail.com,Adrishya
+e50e0284-994b-4fc9-963e-386a1b289b30,Sulav,Baral,sulavbaral58@gmail.com,Prime IT Club
+07d39621-390d-4615-93a7-83f4abdb13f5,Nirjal,Bhurtel,sunnynirjal@gmail.com,Decent
+b7bf47f0-1f8c-45ac-8f14-1ba584a90615,Bijay,Sapkota,sap.bijayy@gmail.com,Decent
+5bb1cff0-6195-4eb1-94a9-ad3b73bc5a9b,Saurav,Paudel,paudelsaurav3@gmail.com,N/A
+acae86c6-abac-47e6-a976-4a90da26d3a3,Joon,Shakya,joonshakya07@gmail.com,Adrishya
+eb9f0574-ebb4-4283-97a5-5fdfbd8c0bcf,Nimesh,Shrestha,nimeshshrestha7@gmail.com,Prime IT Club
+d8f28164-1842-404a-8690-5ba0c6c6718f,Santosh,Yadav,ymanoutube@gmail.com,Adrishya
+e4529618-d68e-4023-9075-df97ec0d99ee,Yogen,Shrestha,yogenstha520@gmail.com,BOOLEAN
+cc1b2a8d-efd4-4445-8a04-77734f95a803,Saugat,Adhikari,asaugat04@gmail.com,BOOLEAN
+38212228-4255-48b0-98e2-d53961313c63,Prakash,Tajpuriya,code.ing2468@gmail.com,BOOLEAN
+3c84de56-607e-4d0a-af4d-da664f4f8581,Uttam,Pradhan,uttampra1@gmail.com,BOOLEAN
+257b4f1f-4356-4a08-b9e9-0c535f503e6c,Ravi,Shrestha,ravistha869@gmail.com,N/A
+bae878c1-d74a-47bb-b031-69184ca42de5,Bhuwan,Paudel,bhubanpaudel79@gmail.com,N/A
+0c2a1298-ad5e-4d57-b525-1034b513859a,Sadhana,Sapkota,mandeyra7@gmail.com,Team Everest
+19a0fd5e-a8e9-4ad5-bf82-c63eb34e1239,Dipen,Khatri,khatridipen7@gmail.com,Decent
+00e4b5ea-8317-44f7-a33c-02746d834e11,Anita,Neupane,anitaneupane2061@gmail.com,Team Everest
+fb422409-e5c5-475e-a8f4-fb48e47624d1,Sanjeev,Magar,sanzivmagat80@gmail.com,Team Everest
+d1382362-8c32-4b59-8178-36ec9419fea8,Sonu,Magar,sonumagar787@gmail.com,Team Everest
+40d7c233-fbd7-4db1-8e85-2fd6baf06226,Nischal,Tamang,tamangnischal2018@gmail.com,Team Everest
+45976ffd-2fbb-4a02-9321-6ccd4c3ddd5e,Benup,Ghimire,benup211@gmail.com,Error-404
+163caabd-ee55-40c8-ae13-4bfd85369e8a,Kaushal Kishor,Mishra,km645195@gmail.com,Error-404
+de47ca6a-7596-475c-b9be-d2b02ddc3c9c,Aaryash,Shakya,aaryashshakya.dev@gmail.com,Error-404
+a92c6348-fb1d-4f94-9629-5773e533ba3a,Ukesh,Shrestha,shrestha@ukesh.slmail.me,Nymna
+43f087ba-5b6a-4fb3-8f34-007890ab2be7,Bipul,Lamsal,bipullamsal@gmail.com,Silicactus
+4b744bbb-cd4d-41c5-bbe1-46099ad78f73,Subash,Rimal,rimalsubash77@gmail.com,leyuskc
+e19ecf76-0913-4572-9b7d-42a6ed87ccd2,Ishan,Panta,ispanta03@gmail.com,Decent
+9e736780-a37d-4d23-9d3b-957a8d8826ff,Bibhushan,Saakha,bibhushansaakha@gmail.com,Decent
+8d5533ad-4214-4c39-b653-166908c30f57,Bishal,Shrestha,bsalxresth1234@gmail.com,Nymna
+dedf3ebb-b043-4d7c-8bda-810a07d7b1e2,Prashanta,Poudel,prashantapoudel52@gmail.com,Team Birendra Multiple Campus
+6fbdc53c-aecd-4aab-93d2-23e422ae8fe0,Srijan,Sapkota,srijan.797402@memc.tu.edu.np,Mechi Mavericks
+35582c33-171b-4456-8237-b73d493b4834,YangSingHang,Ingnam,yangsinglimbu@gmail.com,Mechi Mavericks
+19e3d8ee-1c4f-43a0-a0bb-bfb849d23900,Nishant,Kafle,nishantkafle20@gmail.com,Mechi Mavericks
+3c64c1f8-8b49-46a1-b764-8a6e32418091,Ajit,Ghimire,gajitghimire01@gmail.com,Team Birendra Multiple Campus
+b682a13a-263c-40bb-bc13-5ebaecc991b0,samir,kharel,shameerkharel@gmail.com,Mechi Mavericks
+8cd2f549-2beb-495b-83d0-03fe568d99ae,Sugam,Pokhrel,sugam.797402@memc.tu.edu.np,Mechi Mavericks
+c6498bb3-1d33-41d4-a080-7c25f0ba717f,Jeevan,Neupane,jeevan.neupane003@gmail.com,closeAI
+158fbc8e-9712-44de-9f22-8b72e079e4eb,Anil,Shrestha,anilshresthaid1@gmail.com,closeAI
+747007f1-ad0f-48c6-b841-e23f7ddb4ebe,Pranish,Karki,karkipranish172@gmail.com,Team Birendra Multiple Campus
+bc77e877-91bf-4ca4-ac97-39dc88bd421b,Samir,Neupane,sasuki984@gmail.com,Team Birendra Multiple Campus
+6bd33be6-2441-47ea-9190-2534d10cb2bd,Utkrist,Neupane,utkristneupane@gmail.com,Silicactus
+6ab6a2d8-ee06-4f5c-92e8-001d1cb5196f,Yaman,Sarabariya,yaman.sarabariya@gmail.com,Calculus
+8fb7bd49-5dc9-4bce-826a-8d7ee1e2d7cb,Sabin,Ranabhat,sabinonweb7@gmail.com,Silicactus
+aa4ad779-270e-40ae-97de-cd4ea93504b3,Pawan Raj,Bhatta,pawanbhatta.me@gmail.com,leyuskc
+7a499219-6e4d-4be9-afde-f2d3cc377377,Sandesh,Bhantana,sandeshbhantana@gmail.com,leyuskc
+09b888c5-108b-435d-b7cb-fdf0ce8fa9d8,Anjila,Subedi,anjilakshetri@gmail.com,The Kripples
+4d186321-b13c-400f-beed-799044b81891,Sairash,Sharma Gautam,gautamsairash@gmail.com,N/A
+c17a781a-8691-47c7-91c8-b3d1312a21ae,Ashok,Neupane,neupane.ashok.9696@gmail.com,closeAI
+601e5536-3f07-45c1-b43b-2a01dc9b0b81,sudip,khanal,sudipkhanal0777@gmail.com,N/A
+2d336b1c-175f-4456-b09e-c7a496e0bd9f,Anishka,Mukherjee,anishkamukherjee237@gmail.com,Nymna
+43d57330-4958-42f1-b3b9-d519b2bf8484,Kiran Raj,Dhakal,kdhakal1510@gmail.com,leyuskc
+8084b68d-287b-43c5-96e4-de915126176a,Bijay,Niraula,bijayniraula7@gmail.com,N/A
+0c916cf6-b961-4ac3-9f10-9da03ce13a00,Suresh,Chand,scthakuri12a@gmail.com,Nymna
+03ea80ed-7643-45f8-b5f2-18c09dfc8eb1,Samrat,Sapkota,samratcodess@gmail.com,Team Birendra Multiple Campus
+af9fe568-621c-4e9c-8d21-e44a99f3e8cd,Aagaman,Bhattarai,aagamanbhattrai@gmail.com,The Kripples
+e5233dc8-8452-448c-ae94-a1bc1fe9e049,Nawap,Bastola,nawapbastola@gmail.com,The Kripples
+0c9664d6-351e-44d9-ad01-1040013722fd,Siddhartha,Devkota,siddhartha.devkota@gmail.com,The Kripples
+383fb2c1-2eb4-4923-a7ad-9079a2922ca2,Abhishek,Ranabhat,ranabhatabhishek@gmail.com,Nymna
+624ec140-cce4-4c1c-9185-c998fe23c20b,Rajendra,Acharya,rajendraacharya1ls@gmail.com,Error-404
+613939b7-70dc-4aba-9254-529c0ba7fbc3,Sushan,Shakya,sushan.shakya@deerwalk.edu.np,Mentor
+bdd866a0-3dd2-425e-8d78-dddf787dec7d,Umesh,Regmi,umesh.regmi@deerwalk.edu.np,Mentor
+fba5aaa8-73b0-4704-af97-23d0a8e100db,Aashutosh,Poudel,aashutosh.poudel8@gmail.com,Mentor
+e16af196-a32a-45ac-934f-41ba181b2a28,Avinash,Mishra,avimshra@gmail.com,Mentor
+83f7a16b-0f75-48e8-8aa0-122bdcea9824,Mala Deep,Upadhaya,heymaladeep@gmail.com,Mentor
+17183039-f176-4657-9828-1970af4cd84f,Gokarna,Baskota,gokarnabaskota500@gmail.com,Mentor
+62fa6198-2fbf-4f73-b638-b4df6d06b5c5,Diwas,Maharjan,dmaharjan@hamropatro.com,Mentor
+fe20a0be-6701-4d2a-b5c4-bd9c244485ba,Arun,Ghimire,thearunism@gmail.com,Mentor
+0135317b-0c14-4689-a8ec-283019908a7a,Minalma,Basnet,minalma.basnet@securitypalhq.com,Mentor
+44ca1c90-df9b-4426-bed7-f026b536ad93,Labbi,Karmacharya,labbikarmacharya@gmail.com,Mentor
+faa81aaa-e041-45e1-8c90-7a5eabb96fbd,Sumesh,Gajmer,sgajmer@hamropatro.com,Mentor
+5bb8ded3-671a-40a3-8e98-a8f7e2a15326,Sagar,Siwakoti,ssiwakoti@hamropatro.com,Mentor
+60fda869-e624-4ffb-b2c3-15a9da0d9aa9,Russell,Subedi,rsubedi@hamropatro.com,Mentor
+8237f2bd-0498-4a37-8b46-53b7a831afe8,Sudhir,Bhattarai,sbhattarai@hamropatro.com,Mentor
+80b1e618-c361-424e-bdfb-b6df562f0068,Rahul,Raj Shah,rahulrajshah42@gmail.com,Mentor
+0342e176-6776-46d3-b3a7-7227366e1338,Ayush,Subedi,ayush.subedi@gmail.com,Judge
+ea7bac4c-a5b2-4705-a3f2-79e039e0832a,Jayanti,Mala Chapagain,jayantichapagain12@gmail.com,Judge
+21f8e6ed-706a-4a1d-8a65-f80d117d3a6b,Bikash,Gurung,ran.bikashgurung@gmail.com,Judge
+01d8d2b4-e655-4a2b-bb01-40d61843df98,Rashika,Karki,rashikakarki9841@gmail.com,Judge
+19921e9f-5f31-4a14-8b21-2a8deb0dbc3c,Aashutosh,Pudasaini,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+3e2f768f-5cd2-4fda-85e0-8d165b3ad48d,Sampanna,Gautam,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+bce969ff-7c31-418e-a10f-bf5970fdeef1,Rahul,Shah,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+f73909af-065f-4cdb-8f69-ed26bda9a73b,Akhilesh,Sharma,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+43d899bd-36c0-4017-a5e1-99080b46afc5,Suprasanna,Parajuli,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+819d3cf5-4b3f-4e0b-8e0d-914299d7e668,Samrat,Nakarmi,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+e96613f2-6fd8-41eb-852e-939f3a74d3b5,Bijay,Shrestha,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+40c538f3-c3c6-4f8f-b87b-6ba5a01d2cbf,Sharad,Sharma,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+006470af-952b-49e8-921a-061d747ce58e,Piyush,Rimal,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+a0319669-2757-4c93-8a57-a2fa7849be1c,Aashish,Kadel,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+429af6d7-a0cd-430d-b5bb-6731562e15fd,Shabda,Shrestha,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+e6c090c2-33d6-4a7b-a686-d6bc3f5f6742,Aashutosh,Bikram Karki,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+71aa2c50-5a9d-435f-951b-397587a21ae1,Bipin,Bartaula,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+0e591b5c-83bb-417c-9a9a-b9f5d6deba32,Subikshya,Acharya,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+21ac79df-3f1a-450a-aab6-adf4e1e0950a,Kritish,Chapagain,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+38762a4e-e190-4bb5-8026-c751b823f36e,Saugat,KC,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+24b03325-f344-4ebd-bf97-0760be877fda,Sunav,Sharma,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+b54a3c91-d68c-47d5-a99d-600071d22642,Kohinoor,Shrestha,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+b22560a8-9926-4d80-8253-e33a70c70d16,Sneha,Shresthaa,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+4c86e718-2367-40bd-8db0-b040203e316e,Pranita,Karki,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+f7089be7-3698-4b9f-b368-3e23fd428a1c,Adhit,Upadhyay,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+5af4091d-bbff-484a-a9e6-e439dac4c76d,Ashwinee,Parajuli,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+314c795c-540a-4224-b22d-03b7d5763ee9,Keshab,Rachit Regmi,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+bf541b33-148e-477f-b371-17ce692b8fcc,Krish,Devkota,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+888f9bee-e67c-464f-aafd-c1a7a993242f,Yujona,Gajurel,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+ad4358e2-69ea-4379-bccc-214dd45824ad,Sepia,Shrestha,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+9a17a4d2-403a-4e2b-a565-83956add9626,Pranjal,Raut,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+a986d4c3-a7c0-48d5-b084-e68423f3420d,Ansa,Bhandari,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+32229a72-1dd3-4a31-a20a-d2cd23cc3873,Aashish,Sapkota,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+408acf17-3891-4e7e-8925-eb5d9a48a387,Suprit,Phyual,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+7fe87154-3eb2-4586-897a-7c8ae6827cbc,Bijan,Kc Bhurtel,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+57f29fe0-49d7-42e0-8f8e-7bc2838eba7f,Sagar,Bhusal,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+7edb7e0e-d5c6-4bac-82a0-02307114319a,Srijal,Joshi,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+faeec382-bb51-462f-8881-6fce20294444,Srijan,Dahal,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+4719f765-d132-46a8-8a84-f4b7fffdc141,Ritu,Pudasaini,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+f054bf0f-f973-4350-95e0-0fc28d31c7d4,Kritishma,Singh Maharjan,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+4d55e5a5-d9cb-48e6-86d9-2c05bf0a21f8,Dipan,Silwal,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+6df6ff47-9c79-4bd5-9385-2633baccac88,Parth,Poudyal,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+84de5adb-4377-4a7f-80ae-d7f86ce3eadd,Kritan,Malakar,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+7d2d50be-3a23-40ae-82e8-d339598669f6,Prajwol,Bohara,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+06ee3b36-054d-4bfd-b98c-f3204ffedb75,Deep,Singh Rawal,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+e5cda1e9-b5ff-41e6-921c-1ae48e3059b9,Dirasha,Rajbhandari,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+3079450c-94ad-47d5-a839-971ea360492c,Paruhangma,Limbu,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+7af5c124-eb86-49cb-85f4-e9e518e1ef60,Arunesh,Manandhar,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+637237e6-c45b-439f-b61a-f8e1d3f667c4,Shreema,Bhandari,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+0c946234-0c92-4181-8146-4cbe224ec09f,Kaustuv,Shrestha,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+2d025c1f-3127-4749-a2ba-2799c511f77b,Visitor,1,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+b22f1b7b-8388-48e8-a099-e5212c15070b,Visitor,2,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+49384d7a-ee3f-4c84-8c6c-fcee91c6b25c,Visitor,3,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+fbc482aa-8aca-43e0-8a71-12e5e48e312f,Visitor,4,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+2bea21c9-23b4-42bb-8e28-0a657608ea51,Visitor,5,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+9956f3dc-4d3a-4f43-a240-eff272d2e809,Visitor,6,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+8d88f5a7-f527-49d9-8d65-ab24716bd2dc,Visitor,7,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+de221f0e-9454-4452-bdce-7dce48f936b6,Visitor,8,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+e23a24ff-c38c-4540-85e2-bdc221829b7b,Visitor,9,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+ff3e45c0-2933-4fd4-b51b-f100896d019a,Visitor,10,aashutosh.pudasaini@deerwalk.edu.np,Organizer
+bd734488-5572-41f1-88c7-e244437d2cda,Hitesh,Karki,hitesh.karki@deerwalk.edu.np,Special Guest
+e3092a6a-953c-4b64-8e07-e886ca7a2f3c,Bijay Babu,Regmi,bijay.regmi@deerwalk.edu.np,Special Guest
+6e42c056-951f-47ce-8b6b-da48487b2d71,Shyam Sundar,Khatiwada,shyam.khatiwada@deerwalk.edu.np,Special Guest
+5f0a7042-eb9d-47eb-a43c-c22afaee0ea3,Kiran,Parajuli,kiran.parajuli@deerwalk.edu.np,Special Guest
+44375eb1-59f4-4317-ba78-29b987120891,Pooja,Neupane,pooja.neupane@deerwalk.edu.np,Special Guest
+e6a87e62-67da-4565-be1f-b8dc3885c3d8,Rudra,Pandey,rpandey@deerhold.com,Special Guest
+9b749934-6630-4a32-be7c-d863b244848e,Saurav,Gautam,saurav.gautam@deerwalk.edu.np,Special Guest
+b0cbb9cc-df5e-4378-991e-1d797be52995,Shristi,Awale,shristi.awale@deerwalk.edu.np,Special Guest
+50d08061-39bc-4310-b772-71b2f5016f9e,Kumar,Lamichhane,kumar.lamichhane@deerwalk.edu.np,Special Guest
+481f81db-9792-4425-bf34-f2eaca7fddc7,Sachin,Karanjit,skaranjit@deerhold.com,Special Guest
+cd900e01-0d8d-4b3e-bd36-0572389235df,Milan,Lammichanne,mlamichhane@deerhold.com,Special Guest
+6d353bc3-5b16-438e-a50c-376903d4d45c,Prayatna,Mishra,prayatna.mishra@deerwalk.edu.np,Special Guest
+9e18744f-bbd3-464c-bcab-180b5a38af05,Rojen,Maharjan,rojen.maharjan@deerwalk.edu.np,Special Guest
+65eaaa16-353c-4652-a80f-c380853ad0a1,Bipashree,Aryal,bipashree.aryal@deerwalk.edu.np,Special Guest
+9a848535-0ce9-4d92-bc1a-841650e1d2f1,Sudina,Gautam,sgautam@hamropatro.com,Special Guest
+de2737cb-cbb6-4886-a6f3-e54b72158844,Paritosh,Bhattarai,pbhattarai@hamropatro.com,Special Guest
+a3c61478-492f-4180-a286-10db20c5477c,Laxman,Basnet,laxman@securitypalhq.com,Special Guest
+51e63b9f-4398-468c-974a-c3b0e0da867b,Ajay,Basnet,ajay.basnet@securitypalhq.com,Special Guest
+61426090-f068-401b-a53c-62a2ed40bea8,Roshan,Maharjan,roshan.maharjan@securitypalhq.com,Special Guest
+47000aa9-74d5-4bae-ad7e-d7921a319063,Samir,Gautam,samir.gautam@securitypalhq.com,Special Guest
+0af84c65-4b31-42ca-bb8a-08e1574c76d6,Ramiz,Karna,ramiz@securitypalhq.com,Special Guest
+e455c0b0-8a27-4b3a-8293-574e6a6e6197,Ashutosh B,Rajan,ashutoshbr@proton.me,Special Guest
+9585f1f6-b377-4bba-9d58-2744bfe0f1ca,Sabin,Thapa,sabint017@gmail.com,Special Guest
+d140c3d4-e884-4102-b00a-861a0a9554ae,Sagar,Upreti,sagarupreti100@gmail.com,Special Guest
+caf16077-2ea9-44b9-ac6d-f8416c671159,Bishwa Kiran,Poudel,bishwakiran725@gmail.com,Special Guest
+870dcb93-0e85-4d5d-b4e0-c7a730a0fc49,Sangam,Giri,girisangam00@gmail.com,Special Guest
+3203525d-2e10-4315-b0aa-5574ef58e501,Saphalya,Acharya,programmersaphal@gmail.com,Special Guest
+b4e6da22-2d9a-429e-bcc8-cda1b7cb2247,Pukar,Bajgain,pucarbajgai@gmail.com,Special Guest
+d7fef9ee-94ce-419a-b0e5-2087da37d880,Roshan,KC,officialroshankc@gmail.com,Special Guest
+bddce29a-f81d-43d0-86b2-8a5763847368,Om Prakash,Sharma,Om.Sharma@studentambassadors.com,Special Guest
+5796d00a-b7a2-4870-b50a-d862291ba61d,Upendra,Neupane,official.upendrapneupane@gmail.com,Special Guest
+7a063569-41f8-4cb2-a75a-eed547e46e4d,Sunny,Mahat,sunnymahat@lftechnology.com,Special Guest
+7a04cb00-cfbd-4e3d-bd79-dc5d53dfbcd3,Sayomi,Prajapati,sayomiprajapati@lftechnology.com,Special Guest
+6388ac78-f98d-4ab1-abaf-0ab3aca532ea,Pramod,Rai,Pramod.Rai@cedargate.com,Special Guest
+b636dcf0-64a5-46e2-8ea5-dd1bec9f1588,Bijaya,Shrestha,bijaya.shrestha@sifal.deerwalk.edu.np,Special Guest
+4713ea64-fab9-4267-bfc6-d16a8e8c41d0,Kushal Jung,Adhikari,kushal.adhikari@jbbl.com.np,Special Guest
+eb7415bc-99d6-4b61-9ad7-feb17ad7e6a4,Yagya,Lamsal,yaghya.lamsal@deerwalkcompware.com,Special Guest
+082243b3-1c6a-4063-96d2-4ecfeb30246a,Punit,Jajodia,punit@programiz.com,Special Guest
+1ff6aaee-9ea5-463b-bae4-9b47b8e5d965,Bansaj,Paudel,banshajpaudel5010@gmail.com,Special Guest
