@@ -14,7 +14,8 @@ module.exports = async (req, res, next) => {
   const token = authHeader.split(" ")[1];
 
   // Verify the token using the secret key
-  jwt.verify(token, process.env.JWT_SECRET, async (err, decoded) => {
+  jwt.verify(token, process.env.SECRET_KEY, async (err, decoded) => {
+    console.log(err)
     if (err) {
       return res.status(403).send({ message: "Invalid or expired token" });
     }

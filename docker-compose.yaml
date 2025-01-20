@@ -1,0 +1,72 @@
+
+services:
+
+  frontend:
+    build:
+      context: ./apps/web/
+      dockerfile: Dockerfile
+    ports:
+      - "4173:4173"
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./apps/api/
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: mysql://deerhack:deerhackpassword@database/food_system
+      SECRET_KEY: 453fd2a04cdbd70541f429134b7f94df84fd18c9ee88034618306e1ee277a38c  
+    ports:
+      - "5000:5000"
+    depends_on:
+      database:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  database:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: developer
+      MYSQL_DATABASE: food_system
+      MYSQL_USER: deerhack
+      MYSQL_PASSWORD: deerhackpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - app-network
+    healthcheck:
+      interval: 30s
+      retries: 3
+      test:
+        [
+          "CMD",
+          "healthcheck.sh",
+          "--su-mysql",
+          "--connect",
+          "--innodb_initialized"
+        ]
+      timeout: 30s
+
+  reverse_proxy:
+    image: haproxy
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - app-network
+  
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db-data:

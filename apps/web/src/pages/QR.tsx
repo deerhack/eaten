@@ -4,16 +4,15 @@ import HomeLayout from "@/Layouts/HomeLayout";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useAuthHeader } from "react-auth-kit";
-interface Event{
-  id : string;
-  name: string; 
-  length:number;
+interface Event {
+  id: string;
+  name: string;
+  length: number;
 }
 
-interface Participant{
-  first_name:string;
-  last_name:string; 
-
+interface Participant {
+  first_name: string;
+  last_name: string;
 }
 
 const QR = () => {
@@ -21,8 +20,6 @@ const QR = () => {
   const [selectedEvent, setSeletedEvent] = useState<String>();
   const [data, setData] = useState<Participant[]>([]);
   const authHeaders = useAuthHeader();
-
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,7 +46,6 @@ const QR = () => {
       fetchData();
     }
   }, [selectedEvent]);
-  
 
   return (
     <HomeLayout>
@@ -66,7 +62,7 @@ const QR = () => {
               Select an event
             </label>
             <select
-              onChange={(e:React.ChangeEvent<HTMLSelectElement>) => {
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
                 setSeletedEvent(e.target.value);
               }}
               id="events"

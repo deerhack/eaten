@@ -27,8 +27,12 @@ services:
     
   db:
     image: mariadb:10.7
-    env_file:
-      - .env
+    environment:
+      MYSQL_ROOT_PASSWORD: phprocks
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: deerhack
+      MYSQL_PASSWORD: deerhackpassword
+      DATABASE_DB: food_system
     ports:
       - 3306:3306
     volumes:

@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
+
+const showUsage = () => {
+  console.log("Usage : ./addAdmin {username} {password}");
+};
+
+const username = process.argv[2];
+const password = process.argv[3];
+
+if (!username || !password) {
+  console.log("Username and Password Required!");
+  showUsage();
+  process.exit(1);
+}
+
+async function createUser(username, password) {
+  const created = await prisma.admin.upsert({
+    where: {
+      username: username,
+    },
+    update: {},
+    create: {
+      username: username,
+      password: password,
+    },
+  });
+  return created;
+}
+
+createUser(username, password).then((created) => {
+  if (!created) {
+    console.log("Could Not Create User!");
+    process.exit(1);
+  }
+  console.log(`Created Succesfully ${created.username}:${created.password}`);
+});

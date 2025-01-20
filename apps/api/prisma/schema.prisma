@@ -10,7 +10,7 @@ datasource db {
 model Admin {
   id        String   @id @unique @default(uuid())
   username  String   @unique
-  password  String   @unique
+  password  String   
   createdAt DateTime @default(now())
 }
 
@@ -19,18 +19,14 @@ model Participant {
   uuid           String  @unique
   first_name     String
   last_name      String
-  gender         Gender
+  gender         String
   email          String
   team_name      String
-  qr_data        Bytes
-
+  qr_data        Bytes? @default("")
   events         Event[] @relation("ParticipationEvent")
 }
 
-enum Gender {
-  Male
-  Female
-}
+
 
 model Event {
   id           Int           @id @default(autoincrement())
@@ -39,9 +35,4 @@ model Event {
   end_time     DateTime
   // participants Participant[]
   participants Participant[] @relation("ParticipationEvent")
-}
-
-enum FoodPrefrence {
-  Veg
-  NonVeg
 }
